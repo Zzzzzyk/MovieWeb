@@ -1,0 +1,73 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+{% include 'home/menu.html' %}
+
+<div class="col-md-9">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;会员中心</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" method="post">
+                {% for msg in get_flashed_messages(category_filter=['ok']) %}
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i> {{ msg }}</h4>
+                    密码修改成功
+                </div>
+                {% endfor %}
+                {% for msg in get_flashed_messages(category_filter=['err']) %}
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i>{{ msg }}</h4>
+                    旧密码输入错误
+                </div>
+                {% endfor %}
+                <fieldset>
+                    <div class="form-group">
+                        <label for="input_oldpwd"><span class="glyphicon glyphicon-lock"></span>&nbsp;{{
+                            form.old_pwd.label }}</label>
+                        {% for err in form.old_pwd.errors %}
+                        <font style="color:red">{{ err }}</font>
+                        {% endfor %}
+                        {{ form.old_pwd }}
+                    </div>
+                    <div class="col-md-12" id="error_oldpwd"></div>
+                    <div class="form-group">
+                        <label for="input_newpwd"><span class="glyphicon glyphicon-lock"></span>&nbsp;{{
+                            form.new_pwd.label }}</label>
+                        {% for err in form.new_pwd.errors %}
+                        <font style="color:red">{{ err }}</font>
+                        {% endfor %}
+                        {{ form.new_pwd }}
+                    </div>
+                    <div class="form-group">
+                        <label for="input_newpwd"><span class="glyphicon glyphicon-lock"></span>&nbsp;{{
+                            form.renew_pwd.label }}</label>
+                        {% for err in form.renew_pwd.errors %}
+                        <font style="color:red">{{ err }}</font>
+                        {% endfor %}
+                        {{ form.renew_pwd }}
+                    </div>
+
+                    {{ form.csrf_token }}
+                    {{ form.submit }}
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+    $("#menu2").addClass('active');
+    });
+
+
+
+
+</script>
+{% endblock %}
