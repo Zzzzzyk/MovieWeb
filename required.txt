@@ -1,0 +1,9 @@
+flask
+flask-script
+flask-sqlalchemy
+flask-wtf
+Jinja2
+pymysql
+sqlalchemy
+werkzeug
+wtform
