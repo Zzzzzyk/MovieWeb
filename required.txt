@@ -7,3 +7,5 @@ pymysql
 sqlalchemy
 werkzeug
 wtform
+flask_migrate
+flask_redis
