@@ -6,7 +6,7 @@ from flask_redis import FlaskRedis
 import os
 app = Flask(__name__)
 app.debug = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:zyk666!!@localhost:3306/movieWeb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:zyk666!!@localhost:3306/movieweb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = 'ZHM'
 app.config['UP_DIR'] = os.path.join(os.path.abspath(os.path.dirname(__file__)),'static/uploads/')
