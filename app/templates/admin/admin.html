@@ -28,7 +28,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <header class="main-header">
-        <a href="index.html" class="logo">
+        <a href="{{ url_for(admin.admin)}}" class="logo">
             <span class="logo-mini"><img src="{{ url_for('static',filename='base/images/logo.png') }}" style="height:40px;width:40px;">电影系统</span>
             <span class="logo-lg"><img src="{{ url_for('static',filename='base/images/logo.png') }}" style="height:40px;width:40px;">微电影管理系统</span>
         </a>
@@ -75,7 +75,7 @@
                          alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>用户xxx</p>
+                    <p>{{ session['account']}}</p>
                     <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                 </div>
             </div>
@@ -298,7 +298,7 @@
         <div class="pull-right hidden-xs">
             <b>版本</b> 1.0
         </div>
-        <strong>版权 &copy; 2017-2018 归<a href="">{{ session['account'] }}</a>.</strong> 所有
+        <strong>版权 &copy; 2019 归<a href="">{{ session['account'] }}</a>.</strong> 所有
     </footer>
     <div class="control-sidebar-bg"></div>
 </div>
